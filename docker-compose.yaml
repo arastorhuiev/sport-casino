@@ -1,0 +1,8 @@
+services:
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: sc_dev_drizzle_pw
+      POSTGRES_DB: sc_dev_drizzle
