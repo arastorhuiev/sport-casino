@@ -7,7 +7,7 @@ import { DATABASE_CONNECTION } from '@database/database-connection';
 export class UsersService {
   constructor(
     @Inject(DATABASE_CONNECTION)
-    private readonly db: NodePgDatabase<typeof userSchema>,
+    private readonly db: NodePgDatabase<{ users: typeof userSchema }>,
   ) {}
 
   async getUsers() {
