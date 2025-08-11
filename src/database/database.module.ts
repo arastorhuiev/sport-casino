@@ -13,11 +13,8 @@ import { users as usersSchema } from '@users/users.schema';
         const pool = new Pool({
           connectionString: configService.getOrThrow('DATABASE_URL'),
         });
-
         return drizzle(pool, {
-          schema: {
-            ...usersSchema,
-          },
+          schema: { users: usersSchema },
         });
       },
       inject: [ConfigService],
