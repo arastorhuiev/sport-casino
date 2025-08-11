@@ -1,0 +1,22 @@
+meta {
+  name: create user
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "test22@gmail.com",
+    "password": "testpassword2"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

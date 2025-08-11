@@ -15,7 +15,6 @@ export class UsersService {
   }
 
   async createUser(user: typeof userSchema.$inferInsert) {
-    console.log('🚀 ~ UsersService ~ createUser ~ user:', user);
     await this.db.insert(userSchema).values(user);
   }
 }
