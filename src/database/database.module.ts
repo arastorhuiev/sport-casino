@@ -11,7 +11,7 @@ import { users as usersSchema } from '@users/schemas/users.schema';
       provide: DATABASE_CONNECTION,
       useFactory: (configService: ConfigService) => {
         const pool = new Pool({
-          connectionString: configService.getOrThrow('DATABASE_URL'),
+          connectionString: configService.getOrThrow('SC_DATABASE_URL'),
         });
         return drizzle(pool, {
           schema: { users: usersSchema },
